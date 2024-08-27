@@ -1,0 +1,74 @@
+/* Basic form styling */
+.newPost {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .newPost h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styling fieldsets */
+  .newPost fieldset {
+    border: none;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling form groups */
+  .newPost .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling labels */
+  .newPost label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  /* Styling inputs */
+  .newPost input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Styling textarea */
+  .newPost textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    height: 200px; /* Make the textarea taller */
+    resize: vertical; /* Allow the user to resize the textarea vertically */
+  }
+  
+  /* Input and textarea focus state */
+  .newPost input[type="text"]:focus,
+  .newPost textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Adding some space between inputs */
+  .newPost input[type="text"] + input[type="text"] {
+    margin-top: 10px;
+  }
+  
+  /* Additional styling */
+  .newPost fieldset:last-child {
+    margin-bottom: 0;
+  }
+  
