@@ -11,8 +11,8 @@ export const Rare = () => {
     setTokenState(newToken)
   }
 
-  return <>
+  return (<>
     <NavBar token={token} setToken={setToken} />
     <ApplicationViews token={token} setToken={setToken} />
-  </>
+  </>)
 }
