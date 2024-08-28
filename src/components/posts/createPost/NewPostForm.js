@@ -3,14 +3,22 @@ import "./NewPostForm.css";
 import { getCategories } from "../../../managers/CategoryManager";
 
 export const NewPostForm = () => {
-    const [categories, setCategories] = useState();
-    const [tags, setTags] = useState();
+    const [categories, setCategories] = useState([]);
+    // const [filteredCategories, setFilteredCategories] = useState([])
+    // const [tags, setTags] = useState();
 
-
+    // const getAndSetCategories = () => {
+    //     getCategories().then((categoryArray)=> {
+    //         setCategories(categoryArray)
+    //     })
+    // }
 
 
     useEffect(()=>{
-        getCategories().then((categoryArray)=> setCategories(categoryArray))
+        getCategories().then((categoryArray)=> {
+            console.log(categoryArray)
+            setCategories(categoryArray)
+        })
     },[])
 
     return (
@@ -38,9 +46,10 @@ export const NewPostForm = () => {
             <fieldset className="form-group">
                 <select>
                     <option value="">Select Category</option>
-                    {categories?.map((cat)=> (
-                        <option key={cat.id} value={cat.id}>{cat.label}</option>
-                    ))}
+                    {categories?.length > 0 ? (categories?.map((cat)=> 
+                    (<option key={cat.id} value={cat.id}>{cat.label}</option>))):("")}
+                    
+                   
                 </select>
             </fieldset>
         </form>
