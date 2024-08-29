@@ -1,0 +1,43 @@
+.tag-view {
+    display: flex; /* Allows child elements to be displayed side by side */
+    gap: 20px; /* Adds space between the list and the form */
+    padding: 20px;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+.tag-list-box {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+    margin: 0;
+    width: 50%; /* Takes half of the available space */
+  }
+  
+  .one-tag {
+    margin-bottom: 10px; /* Adds space between tags */
+    display: flex;
+    align-items: center; /* Aligns content vertically */
+    gap: 10px;
+  }
+  
+  .button {
+    margin-right: 5px; /* Adds space between buttons */
+  }
+  .new-tag-button {
+    width: 200px
+  }
+  
+  .tag-form-box {
+    width: 300px; /* Takes the other half of the available space */
+    height: 150px;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; /* Adds space between form elements */
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    box-shadow: 2px 2px grey;
+    background-color: lightgrey;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+  }
