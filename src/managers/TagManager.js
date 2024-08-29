@@ -3,3 +3,14 @@ export const getTags=()=>{
         res.json()
  )
 }
+
+export const createNewTag=(tag)=>{
+    return fetch("http://localhost:8000/tags",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(tag)
+        }).then(res => res.json())
+}
