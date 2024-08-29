@@ -5,8 +5,9 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createNewCategory } from "../../../managers/CategoryManager";
+
 import "./CreateCategoryForm.css";
+import { createNewCategory } from "../../../managers/CategoryManager";
 
 export const CreateCategory = () => {
   const [postCategory, setPostCategory] = useState({
@@ -18,7 +19,7 @@ export const CreateCategory = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    createNewCategory(postCategory).then(() => navigate(`/categoryList`));
+    createNewCategory(postCategory).then(() => navigate(`/categoryManager`));
   };
 
   const handleChange = (event) => {
@@ -35,6 +36,7 @@ export const CreateCategory = () => {
           <input
             type="text"
             id="label"
+            placeholder="Enter New Category"
             onChange={handleChange}
             className="form-control"
           />
