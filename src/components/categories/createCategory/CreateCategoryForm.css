@@ -1,0 +1,79 @@
+/* Basic form styling */
+.createCategory {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.createCategory h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling fieldsets */
+.createCategory fieldset {
+    border: none;
+    margin-bottom: 15px;
+}
+
+/* Styling form groups */
+.createCategory .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling labels */
+.createCategory label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Styling inputs */
+.createCategory input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus state */
+.createCategory input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Adding some space between inputs */
+.createCategory input[type="text"] + input[type="text"] {
+    margin-top: 10px;
+}
+
+/* Additional styling */
+.createCategory fieldset:last-child {
+    margin-bottom: 0;
+}
+
+/* Button styling */
+.createCategory .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createCategory .btn:hover {
+    background-color: #0056b3;
+}
