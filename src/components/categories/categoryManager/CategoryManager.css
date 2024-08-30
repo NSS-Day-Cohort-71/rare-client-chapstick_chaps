@@ -1,54 +1,51 @@
-.CategoryManager {
-    padding: 20px;
-  }
-  
-  .CategoryManager h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .CategoryManager ul {
-    list-style-position: inside; /* Position the list item markers inside */
-    padding-left: 0;
-  }
-  
-  .CategoryManager li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 0;
-    font-size: 18px;
-  }
-  
-  .CategoryManager li button {
-    margin-right: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  .CategoryManager li button:hover {
-    background-color: #0056b3;
-  }
-  
-  .CategoryManager li button:last-child {
-    margin-right: 0; /* No margin on the last button */
-  }
-  
-  .CategoryManager button {
-    margin-top: 20px;
-    background-color: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  .CategoryManager button:hover {
-    background-color: #218838;
-  }
-  
+.categoryView {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryListBox {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+}
+
+.oneCategory {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button {
+  margin-right: 5px;
+}
+
+.newCategoryButton {
+  width: 200px;
+}
+
+.categoryFormBox {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 2px 2px grey;
+  background-color: lightgrey;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-around;
+}
