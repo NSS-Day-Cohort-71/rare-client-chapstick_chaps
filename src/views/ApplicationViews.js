@@ -9,13 +9,23 @@ import { CategoryManager } from "../components/categories/categoryManager/Catego
 import { CreateCategory } from "../components/categories/createCategory/CreateCategoryForm";
 import { ViewAllPostsForm } from "../components/posts/allPosts/ViewAllPostsForm"
 import { ShowPostDetails } from "../components/posts/allPosts/ShowPostDetails";
+import { useEffect, useState } from "react";
+import { getCurrentUser } from "../managers/UserManager";
 
-export const ApplicationViews = ({ token, setToken, currentUser, getAndSetCurrentUser }) => {
+export const ApplicationViews = ({ token, setToken}) => {
+  const [currentUser, setCurrentUser] = useState({})
+
+  useEffect(()=>{
+    if (token){
+      getCurrentUser(token).then((userObj) => {
+        setCurrentUser(userObj)
+    })} 
+  })
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login setToken={setToken} getAndSetCurrentUser={getAndSetCurrentUser}/>} />
-        <Route path="/register" element={<Register setToken={setToken} getAndSetCurrentUser={getAndSetCurrentUser} />} />
+        <Route path="/login" element={<Login setToken={setToken} />} />
+        <Route path="/register" element={<Register setToken={setToken}  />} />
         <Route element={<Authorized token={token} />}>
           <Route path="/" element={"HOMEPAGE"} />
           <Route path="/allPosts" element={<ViewAllPostsForm />} />

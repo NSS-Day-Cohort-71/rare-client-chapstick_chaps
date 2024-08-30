@@ -14,8 +14,8 @@ export const MyPosts = ({currentUser}) => {
     }
     
     useEffect(()=>{
-        const id = parseInt(currentUser.id)
+        const id = currentUser.id
         getAndSetUserPosts(id)
-    },[])
+    },[currentUser])
     return <button className="button" onClick={()=> {navigate("/newPostForm")}}>New Post</button>
 }

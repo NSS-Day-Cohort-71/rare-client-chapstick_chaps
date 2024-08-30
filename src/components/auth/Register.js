@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { registerUser } from "../../managers/AuthManager"
 
-export const Register = ({setToken, getAndSetCurrentUser}) => {
+export const Register = ({setToken}) => {
   const firstName = useRef()
   const lastName = useRef()
   const email = useRef()
@@ -31,7 +31,6 @@ export const Register = ({setToken, getAndSetCurrentUser}) => {
         .then(res => {
           if ("valid" in res && res.valid) {
             setToken(res.token)
-            getAndSetCurrentUser(res.token)
             navigate("/")
           }
         })
