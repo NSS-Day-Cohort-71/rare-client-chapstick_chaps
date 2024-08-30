@@ -10,16 +10,16 @@ import { CreateCategory } from "../components/categories/createCategory/CreateCa
 import { ViewAllPostsForm } from "../components/posts/allPosts/ViewAllPostsForm"
 import { ShowPostDetails } from "../components/posts/allPosts/ShowPostDetails";
 
-export const ApplicationViews = ({ token, setToken }) => {
+export const ApplicationViews = ({ token, setToken, currentUser, getAndSetCurrentUser }) => {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login setToken={setToken} />} />
-        <Route path="/register" element={<Register setToken={setToken} />} />
+        <Route path="/login" element={<Login setToken={setToken} getAndSetCurrentUser={getAndSetCurrentUser}/>} />
+        <Route path="/register" element={<Register setToken={setToken} getAndSetCurrentUser={getAndSetCurrentUser} />} />
         <Route element={<Authorized token={token} />}>
           <Route path="/" element={"HOMEPAGE"} />
           <Route path="/allPosts" element={<ViewAllPostsForm />} />
-          <Route path="/myPosts" element={<MyPosts token={token} />} />
+          <Route path="/myPosts" element={<MyPosts currentUser={currentUser} />} />
           <Route path="/postDetails/:postId" element={<ShowPostDetails />} />
           <Route
             path="/categoryManager"
