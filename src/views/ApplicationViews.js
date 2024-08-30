@@ -8,6 +8,7 @@ import { TagView } from "../components/tags/TagView";
 import { CategoryManager } from "../components/categories/categoryManager/CategoryManager";
 import { CreateCategory } from "../components/categories/createCategory/CreateCategoryForm";
 import { ViewAllPostsForm } from "../components/posts/allPosts/ViewAllPostsForm"
+import { ShowPostDetails } from "../components/posts/allPosts/ShowPostDetails";
 
 export const ApplicationViews = ({ token, setToken }) => {
   return (
@@ -19,6 +20,7 @@ export const ApplicationViews = ({ token, setToken }) => {
           <Route path="/" element={"HOMEPAGE"} />
           <Route path="/allPosts" element={<ViewAllPostsForm />} />
           <Route path="/myPosts" element={<MyPosts token={token} />} />
+          <Route path="/postDetails/:postId" element={<ShowPostDetails />} />
           <Route
             path="/categoryManager"
             element={<CategoryManager token={token} />}
