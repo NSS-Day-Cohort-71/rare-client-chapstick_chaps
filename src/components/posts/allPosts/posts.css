@@ -1,0 +1,47 @@
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the posts horizontally */
+    gap: 16px; /* Adjust spacing between items */
+}
+
+.post-item {
+    background-color: #f9f9f9; /* Background color for each post */
+    padding: 16px; /* Padding inside each post */
+    border: 1px solid #ccc; /* Border for each post */
+    border-radius: 8px; /* Rounded corners */
+    width: calc(25% - 16px); /* 25% width minus gap to fit four in a row */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+    text-align: center; /* Center the content inside each post */
+}
+
+.post-item h3 {
+    font-size: 1.2em; /* Adjust title size */
+    margin-bottom: 8px; /* Space below title */
+}
+
+.post-btn {
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display as inline-block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin around buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded button corners */
+}
+
+@media (max-width: 768px) {
+    .post-item {
+        width: calc(50% - 16px); /* Two posts per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .post-item {
+        width: 100%; /* One post per row on mobile screens */
+    }
+}

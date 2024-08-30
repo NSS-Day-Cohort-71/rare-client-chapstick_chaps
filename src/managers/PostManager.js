@@ -7,3 +7,7 @@ export const createNewPost = (post) => {
         body: JSON.stringify(post)
     }).then(res => res.json())
 }
+
+export const getAllPosts = () => {
+    return fetch("http://localhost:8000/posts").then(res => res.json())
+}
