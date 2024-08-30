@@ -7,6 +7,7 @@ import { MyPosts } from "../components/posts/myPosts/MyPosts";
 import { TagView } from "../components/tags/TagView";
 import { CategoryManager } from "../components/categories/categoryManager/CategoryManager";
 import { CreateCategory } from "../components/categories/createCategory/CreateCategoryForm";
+import { ViewAllPostsForm } from "../components/posts/allPosts/ViewAllPostsForm"
 
 export const ApplicationViews = ({ token, setToken }) => {
   return (
@@ -16,7 +17,7 @@ export const ApplicationViews = ({ token, setToken }) => {
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route element={<Authorized token={token} />}>
           <Route path="/" element={"HOMEPAGE"} />
-          <Route path="/allPosts" element={"ALL POSTS"} />
+          <Route path="/allPosts" element={<ViewAllPostsForm />} />
           <Route path="/myPosts" element={<MyPosts token={token} />} />
           <Route
             path="/categoryManager"
