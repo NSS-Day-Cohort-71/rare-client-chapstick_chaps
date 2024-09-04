@@ -20,7 +20,7 @@ export const ApplicationViews = ({ token, setToken}) => {
       getCurrentUser(token).then((userObj) => {
         setCurrentUser(userObj)
     })} 
-  })
+  },[token])
   return (
     <>
       <Routes>
