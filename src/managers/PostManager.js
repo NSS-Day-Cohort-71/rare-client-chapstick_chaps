@@ -20,3 +20,7 @@ export const getPostById = (postId) => {
 export const getPostsByUserId = (userId) => {
     return fetch(`http://localhost:8000/posts/${userId}`).then(res => res.json())
 }
+
+export const deletePost = (postId) => {
+    return fetch(`http://localhost:8000/posts/${postId}`, { method: "DELETE" });
+  };
