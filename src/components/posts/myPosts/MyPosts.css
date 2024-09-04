@@ -1,0 +1,49 @@
+.my-post-view {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.button-box {
+   display: flex;
+   justify-content: flex-end;
+   margin-right: 4rem;
+   margin-bottom: 2rem;
+}
+
+.posts {
+    
+    margin-left: 2rem;
+    justify-content: center;
+    
+}
+.one-post {
+    width: 90%;
+    border: 2px solid lightgrey;
+    margin-bottom: 3rem;
+    padding: 2rem;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.post-title {
+    font-weight: 800;
+    font-size: larger;
+}
+.post-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}

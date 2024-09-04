@@ -13,5 +13,10 @@ export const getAllPosts = () => {
 }
 
 export const getPostById = (postId) => {
-    return fetch(`http://localhost:8000/posts/${postId}`).then(res => res.json())
+    return fetch(`http://localhost:8000/postDetails/${postId}`).then(res => res.json())
+}
+
+
+export const getPostsByUserId = (userId) => {
+    return fetch(`http://localhost:8000/posts/${userId}`).then(res => res.json())
 }
