@@ -37,7 +37,10 @@ export const MyPosts = ({currentUser}) => {
                         <h2 className="post-title">{post.title}</h2>
                         <h3 className="post-category">Category: {post.category.label}</h3>
                     </div>
-                    <h4>Publication Date: {formatDate(post.publication_date)}</h4>
+                    <div className="published">
+                        <h4>Publication Date: {formatDate(post.publication_date)}</h4>
+                        {post.publication_date ? (<button>Unpublish</button>) : (<button>Publish</button>)}
+                    </div>
                 </div>
                 <div className="post-img" onClick={()=>{navigate(`/postDetails/${post.id}`)}}>
                     <img src={post.image_url} alt={post.title}/>
