@@ -3,7 +3,7 @@ import { getAllPosts } from "../../../managers/PostManager";
 import { Link } from "react-router-dom";
 import "./posts.css";
 
-export const ViewAllPostsForm = () => {
+export const ViewAllPosts = () => {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {

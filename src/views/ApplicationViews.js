@@ -7,11 +7,11 @@ import { MyPosts } from "../components/posts/myPosts/MyPosts";
 import { TagView } from "../components/tags/TagView";
 import { CategoryManager } from "../components/categories/categoryManager/CategoryManager";
 import { CreateCategory } from "../components/categories/createCategory/CreateCategoryForm";
-import { ViewAllPostsForm } from "../components/posts/allPosts/ViewAllPostsForm";
 import { ShowPostDetails } from "../components/posts/allPosts/ShowPostDetails";
 import { useEffect, useState } from "react";
 import { getCurrentUser } from "../managers/UserManager";
 import { EditPostForm } from "../components/posts/myPosts/EditPostForm";
+import { ViewAllPosts } from "../components/posts/allPosts/ViewAllPosts";
 
 export const ApplicationViews = ({ token, setToken }) => {
   const [currentUser, setCurrentUser] = useState({});
@@ -30,7 +30,7 @@ export const ApplicationViews = ({ token, setToken }) => {
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route element={<Authorized token={token} />}>
           <Route path="/" element={"HOMEPAGE"} />
-          <Route path="/allPosts" element={<ViewAllPostsForm />} />
+          <Route path="/allPosts" element={<ViewAllPosts />} />
           <Route
             path="/myPosts"
             element={<MyPosts currentUser={currentUser} />}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPostById, updatePost } from "../../../managers/PostManager";
 import { getCategories } from "../../../managers/CategoryManager";
-import "./myposts.css";
+import "./EditPostForm.css";
 
 export const EditPostForm = () => {
   const { postId } = useParams();
