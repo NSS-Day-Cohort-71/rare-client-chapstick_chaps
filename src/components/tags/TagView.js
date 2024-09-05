@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createNewTag, getTags } from "../../managers/TagManager"
+import { createNewTag, getTags, updateTag } from "../../managers/TagManager"
 import "./TagView.css"
 export const TagView = ({token}) => {
     const [allTags, setAllTags]= useState([])
@@ -29,6 +29,19 @@ export const TagView = ({token}) => {
             window.alert("You didn't input new tag text!")
         }
     }
+
+    const handleEdit = (id, label) => {
+        let updatedTag = window.prompt(`What would you like to change ${label} to?`)
+        if (updatedTag) {
+            const tag = {
+                id: id,
+                label: updatedTag
+            }
+            updateTag(tag).then(()=>{
+                getAndSetAllTags()
+            })
+        }
+    }
         
     const changeFormVisibility = () => {
         setShowForm(!showForm)
@@ -42,7 +55,7 @@ export const TagView = ({token}) => {
         <ul className="tag-list-box">
             {allTags.map((tag)=>
                 <li className="one-tag" key={tag.id}>
-                    <button className="button">Edit</button>
+                    <button className="button" onClick={()=>{handleEdit(tag.id, tag.label)}}>Edit</button>
                     <button className="button">Delete</button>
                     {tag.label}
                 </li>
