@@ -37,9 +37,9 @@ export const TagView = ({token}) => {
                 id: id,
                 label: updatedTag
             }
-            updateTag(tag)
-                .then(()=>{
-                    getAndSetAllTags()})
+            updateTag(tag).then(()=>{
+                getAndSetAllTags()
+            })
         }
     }
         
