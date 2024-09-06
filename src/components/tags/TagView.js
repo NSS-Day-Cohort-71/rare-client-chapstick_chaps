@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createNewTag, getTags, updateTag } from "../../managers/TagManager"
+import { createNewTag, deleteTag, getTags, updateTag } from "../../managers/TagManager"
 import "./TagView.css"
 export const TagView = ({token}) => {
     const [allTags, setAllTags]= useState([])
@@ -42,6 +42,12 @@ export const TagView = ({token}) => {
             })
         }
     }
+
+    const handleDelete = (id, label) => {
+        if(window.confirm(`Are you sure you want to delete ${label}?`)){
+            deleteTag(id).then(()=>{getAndSetAllTags()})
+        }
+    }
         
     const changeFormVisibility = () => {
         setShowForm(!showForm)
@@ -56,7 +62,7 @@ export const TagView = ({token}) => {
             {allTags.map((tag)=>
                 <li className="one-tag" key={tag.id}>
                     <button className="button" onClick={()=>{handleEdit(tag.id, tag.label)}}>Edit</button>
-                    <button className="button">Delete</button>
+                    <button className="button" onClick={()=>{handleDelete(tag.id, tag.label)}}>Delete</button>
                     {tag.label}
                 </li>
             )}
